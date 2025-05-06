@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProdutosApp.API", "ProdutosApp.API\ProdutosApp.API.csproj", "{EE570A76-4192-4479-A0B9-3310DDC7FB41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{25F927E4-C037-462A-A00E-BD2AFC129E8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{D178D86D-A81C-4E94-9ED1-27A5A24E5BC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{88084255-6A73-498F-992E-3513BFAC6879}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{39846FFC-0332-4D55-A20E-E6B91A5024E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE570A76-4192-4479-A0B9-3310DDC7FB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE570A76-4192-4479-A0B9-3310DDC7FB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE570A76-4192-4479-A0B9-3310DDC7FB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE570A76-4192-4479-A0B9-3310DDC7FB41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B49B6BA4-339B-4354-B4CD-358A7748BDA4}
+	EndGlobalSection
+EndGlobal
