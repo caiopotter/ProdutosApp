@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProdutosApp.Infra.Data\ProdutosApp.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="appsettings.Production.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
