@@ -11,31 +11,34 @@ on:
 
 jobs:
   build:
+    name: Compilar e publicar o projeto
     runs-on: windows-latest
     permissions:
       contents: read #This is required for actions/checkout
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Clonar o repositorio
+        uses: actions/checkout@v4
 
-      - name: Set up .NET Core
+      - name: Instalar o SDK do .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.x'
 
-      - name: Build with dotnet
+      - name: Compilar com o .NET
         run: dotnet build --configuration Release
 
-      - name: dotnet publish
+      - name: Publicar o projeto
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
-      - name: Upload artifact for deployment job
+      - name: Enviar o artefato para o job ou etapa de implantação
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
+    name: Implantar o projeto no Azure Web App
     runs-on: windows-latest
     needs: build
     environment:
@@ -46,7 +49,7 @@ jobs:
       contents: read #This is required for actions/checkout
 
     steps:
-      - name: Download artifact from build job
+      - name: Baixar o artefato do job ou etapa de compilação
         uses: actions/download-artifact@v4
         with:
           name: .net-app
@@ -58,7 +61,7 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_BF5B04D3482F445286CA9566F041E026 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6F2569205A05479284B27D4087D1DF39 }}
 
-      - name: Deploy to Azure Web App
+      - name: Implantar o projeto no Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
