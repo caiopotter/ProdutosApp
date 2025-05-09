@@ -10,7 +10,7 @@ namespace ProdutosApp.Domain.Interfaces.Repositories
     /// <summary>
     /// Interface de repositório para a entidade Categoria.
     /// </summary>
-    internal class ICategoriaRepository: IBaseRepository<Categoria, Guid?>
+    public interface ICategoriaRepository: IBaseRepository<Categoria, Guid?>
     {
     }
 }
