@@ -1,4 +1,6 @@
 using ProdutosApp.Infra.Data.Extensions;
+using ProdutosApp.Application.Extensions;
+using ProdutosApp.Domain.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddApplicationServices();
+builder.Services.AddDomainServices();
 builder.Services.AddEntityFramework(builder.Configuration);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

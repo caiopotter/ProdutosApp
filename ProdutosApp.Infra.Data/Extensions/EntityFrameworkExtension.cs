@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProdutosApp.Domain.Interfaces.Repositories;
 using ProdutosApp.Infra.Data.Contexts;
+using ProdutosApp.Infra.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,9 @@ namespace ProdutosApp.Infra.Data.Extensions
             // Adiciona o DataContext com a string de conexão do banco de dados
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("ProdutosAppBD")));
+
+            // Adiciona injeção de dependência para o UnitOfWork
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
     }
