@@ -30,10 +30,16 @@ namespace ProdutosApp.Domain.Services
                 throw new NaoEncontradoException(nameof(Produto), produto.Id);
             }
 
+            //criar mapper
+            registro.Quantidade = produto.Quantidade;
+            registro.CategoriaId = produto.CategoriaId;
+            registro.Nome = produto.Nome;
+            registro.Preco = produto.Preco;
+
             ValidarProduto(produto);
             await VerificarCategoria(produto.CategoriaId);
 
-            await unitOfWork.ProdutoRepository.UpdateAsync(produto);
+            //await unitOfWork.ProdutoRepository.UpdateAsync(produto);
             await unitOfWork.SaveChancesAsync();
         }
 
