@@ -17,6 +17,7 @@ namespace ProdutosApp.Application.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<ICategoriaAppService, CategoriaAppService>();
+            services.AddScoped<IProdutoAppService, ProdutoAppService>();
             return services;
         }
     }

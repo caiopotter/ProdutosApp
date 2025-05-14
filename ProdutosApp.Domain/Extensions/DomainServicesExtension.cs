@@ -15,6 +15,7 @@ namespace ProdutosApp.Domain.Extensions
         public static IServiceCollection AddDomainServices(this IServiceCollection services)
         {
             services.AddScoped<ICategoriaDomainService, CategoriaDomainService>();
+            services.AddScoped<IProdutoDomainService, ProdutoDomainService>();
             return services;
         }
     }

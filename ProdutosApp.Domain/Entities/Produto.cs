@@ -25,5 +25,10 @@ namespace ProdutosApp.Domain.Entities
         public Categoria? Categoria { get; set; }
 
         #endregion
+
+        public void Inativar()
+        {
+            Ativo = false;
+        }
     }
 }
